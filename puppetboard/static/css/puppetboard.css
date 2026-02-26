@@ -1,3 +1,414 @@
+/* ===== CSS Variables - Light Theme (default) ===== */
+:root {
+  /* Status colors */
+  --color-failed: #AA4643;
+  --color-changed: #4572A7;
+  --color-unchanged: #89A54E;
+  --color-unreported: #3D96AE;
+  --color-noop: #DB843D;
+  --color-skipped: orange;
+  --color-total: #989898;
+
+  /* UI colors */
+  --color-darkblue: #2C3E50;
+  --color-yellow: #F0E965;
+  --color-link: #2E5D8C;
+  --color-bg: #ffffff;
+  --color-bg-secondary: #f5f5f5;
+  --color-text: #333333;
+  --color-text-muted: #666666;
+  --color-border: #e0e0e0;
+  --color-footer-bg: #E8E8E8;
+
+  /* Scroll button */
+  --color-scroll-btn: #777;
+  --color-scroll-btn-hover: #888;
+  --color-scroll-btn-text: #EEE;
+
+  /* JSON syntax highlighting */
+  --color-json-string: #2E5D8C;
+  --color-json-string-hover: #1e70bf;
+  --color-json-number: darkorange;
+  --color-json-number-hover: #ffab3d;
+  --color-json-boolean: blue;
+  --color-json-boolean-hover: #7171fc;
+  --color-json-key: rgb(97, 117, 54);
+  --color-json-key-hover: rgb(158, 185, 101);
+  --color-json-null: magenta;
+
+  /* Component colors */
+  --color-segment-bg: #ffffff;
+  --color-table-bg: #ffffff;
+  --color-table-header-bg: #f9fafb;
+  --color-input-bg: #ffffff;
+  --color-dropdown-bg: #ffffff;
+  --color-card-bg: #ffffff;
+}
+
+/* ===== CSS Variables - Dark Theme ===== */
+[data-theme="dark"] {
+  /* Status colors - bolder/brighter for dark backgrounds */
+  --color-failed: #ff5555;
+  --color-changed: #5badff;
+  --color-unchanged: #89A54E;
+  --color-unreported: #17a2b8;
+  --color-noop: #ffb86c;
+  --color-skipped: #ffa500;
+  --color-total: #b0b0b0;
+
+  /* UI colors */
+  --color-darkblue: #1a252f;
+  --color-yellow: #F0E965;
+  --color-link: #79c0ff;
+  --color-bg: #1b1c1d;
+  --color-bg-secondary: #0d1117;
+  --color-text: #e6edf3;
+  --color-text-muted: #a0a0a0;
+  --color-border: #555555;
+  --color-footer-bg: #242526;
+
+  /* Scroll button */
+  --color-scroll-btn: #555;
+  --color-scroll-btn-hover: #666;
+  --color-scroll-btn-text: #EEE;
+
+  /* JSON syntax highlighting - brighter for dark bg */
+  --color-json-string: #79c0ff;
+  --color-json-string-hover: #a5d6ff;
+  --color-json-number: #ffb347;
+  --color-json-number-hover: #ffc977;
+  --color-json-boolean: #79c0ff;
+  --color-json-boolean-hover: #a5d6ff;
+  --color-json-key: rgb(158, 185, 101);
+  --color-json-key-hover: rgb(180, 210, 130);
+  --color-json-null: #ff79c6;
+
+  /* Component colors */
+  --color-segment-bg: #161b22;
+  --color-table-bg: #161b22;
+  --color-table-header-bg: #0d1117;
+  --color-input-bg: #0d1117;
+  --color-dropdown-bg: #161b22;
+  --color-card-bg: #161b22;
+}
+
+/* ===== Dark Theme Overrides ===== */
+[data-theme="dark"] body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .ui.segment {
+  background-color: var(--color-segment-bg);
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .ui.table {
+  background-color: var(--color-table-bg);
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .ui.table thead th {
+  background-color: var(--color-table-header-bg);
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .ui.table tbody tr {
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .ui.table tbody td {
+  border-color: var(--color-border);
+}
+
+/* Table row backgrounds in dark mode */
+[data-theme="dark"] .ui.table tbody tr {
+  background-color: var(--color-table-bg);
+}
+
+[data-theme="dark"] .ui.table tbody tr:hover {
+  background-color: var(--color-bg-secondary) !important;
+}
+
+/* Striped tables */
+[data-theme="dark"] .ui.striped.table tbody tr:nth-child(2n) {
+  background-color: var(--color-bg-secondary);
+}
+
+[data-theme="dark"] .ui.form input,
+[data-theme="dark"] .ui.form textarea,
+[data-theme="dark"] .ui.input input,
+[data-theme="dark"] textarea {
+  background-color: var(--color-input-bg);
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .ui.dropdown,
+[data-theme="dark"] .ui.dropdown .menu {
+  background-color: var(--color-dropdown-bg);
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .ui.dropdown .menu > .item {
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .ui.dropdown .menu > .item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .ui.selection.dropdown {
+  background-color: var(--color-dropdown-bg);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .ui.card,
+[data-theme="dark"] .ui.cards > .card {
+  background-color: var(--color-card-bg);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .ui.message {
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] pre.result,
+[data-theme="dark"] pre.error_message,
+[data-theme="dark"] td.error_message,
+[data-theme="dark"] .log-message {
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text);
+}
+
+/* DataTables in dark mode - ensure proper dark styling */
+[data-theme="dark"] .dataTables_wrapper {
+  color: var(--color-text);
+}
+
+[data-theme="dark"] table.dataTable tbody tr {
+  background-color: var(--color-table-bg) !important;
+}
+
+[data-theme="dark"] table.dataTable tbody tr:hover {
+  background-color: var(--color-bg-secondary) !important;
+}
+
+[data-theme="dark"] table.dataTable tbody td {
+  color: var(--color-text);
+  background-color: transparent;
+}
+
+[data-theme="dark"] table.dataTable thead th {
+  background-color: var(--color-table-header-bg) !important;
+  color: var(--color-text) !important;
+  border-color: var(--color-border) !important;
+}
+
+/* Billboard.js chart dark mode */
+[data-theme="dark"] .bb text,
+[data-theme="dark"] .bb-axis text,
+[data-theme="dark"] .bb-axis-x text,
+[data-theme="dark"] .bb-axis-y text {
+  fill: var(--color-text) !important;
+}
+
+[data-theme="dark"] .bb-axis line,
+[data-theme="dark"] .bb-axis path {
+  stroke: var(--color-border) !important;
+}
+
+[data-theme="dark"] .bb-legend-item text {
+  fill: var(--color-text) !important;
+}
+
+/* DataTables pagination dark mode */
+[data-theme="dark"] .dataTables_paginate .paginate_button {
+  color: var(--color-text) !important;
+  background-color: var(--color-table-bg) !important;
+  border-color: var(--color-border) !important;
+}
+
+[data-theme="dark"] .dataTables_paginate .paginate_button:hover {
+  color: var(--color-text) !important;
+  background-color: var(--color-bg-secondary) !important;
+  border-color: var(--color-border) !important;
+}
+
+[data-theme="dark"] .dataTables_paginate .paginate_button.current {
+  color: #fff !important;
+  background: var(--color-darkblue) !important;
+  border-color: var(--color-darkblue) !important;
+}
+
+[data-theme="dark"] .dataTables_paginate .paginate_button.disabled {
+  color: var(--color-text-muted) !important;
+  background-color: var(--color-table-bg) !important;
+}
+
+/* DataTables export buttons (Copy, CSV, Excel, etc.) */
+[data-theme="dark"] .dt-buttons .dt-button,
+[data-theme="dark"] .buttons-copy,
+[data-theme="dark"] .buttons-csv,
+[data-theme="dark"] .buttons-excel,
+[data-theme="dark"] .buttons-pdf,
+[data-theme="dark"] .buttons-print {
+  color: var(--color-text) !important;
+  background-color: var(--color-table-bg) !important;
+  border-color: var(--color-border) !important;
+}
+
+[data-theme="dark"] .dt-buttons .dt-button:hover {
+  color: var(--color-text) !important;
+  background-color: var(--color-bg-secondary) !important;
+}
+
+/* Fomantic UI checkboxes in dark mode */
+[data-theme="dark"] .ui.checkbox label,
+[data-theme="dark"] .ui.checkbox + label {
+  color: var(--color-text) !important;
+}
+
+[data-theme="dark"] .ui.checkbox input:checked ~ label:before {
+  background-color: var(--color-darkblue);
+  border-color: var(--color-darkblue);
+}
+
+[data-theme="dark"] .ui.checkbox label:before {
+  background-color: var(--color-input-bg);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .ui.toggle.checkbox label {
+  color: var(--color-text) !important;
+}
+
+[data-theme="dark"] .ui.toggle.checkbox label:before {
+  background-color: var(--color-border);
+}
+
+[data-theme="dark"] .ui.toggle.checkbox input:checked ~ label:before {
+  background-color: var(--color-changed) !important;
+}
+
+/* Fomantic UI buttons in dark mode */
+[data-theme="dark"] .ui.button {
+  background-color: var(--color-table-bg);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+[data-theme="dark"] .ui.button:hover {
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .ui.primary.button {
+  background-color: var(--color-changed);
+  color: #fff;
+}
+
+/* Tabs/menu items in dark mode */
+[data-theme="dark"] .ui.secondary.menu .item {
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .ui.secondary.menu .active.item {
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .ui.tabular.menu .item {
+  color: var(--color-text);
+  background-color: transparent;
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .ui.tabular.menu .active.item {
+  background-color: var(--color-table-bg);
+  color: var(--color-text);
+  border-color: var(--color-border);
+  border-bottom-color: var(--color-table-bg);
+}
+
+/* Ensure status labels keep white text on colored backgrounds in dark mode */
+[data-theme="dark"] .ui.label.status,
+[data-theme="dark"] .ui.label.failed,
+[data-theme="dark"] .ui.label.failure,
+[data-theme="dark"] .ui.label.changed,
+[data-theme="dark"] .ui.label.success,
+[data-theme="dark"] .ui.label.unchanged,
+[data-theme="dark"] .ui.label.unreported,
+[data-theme="dark"] .ui.label.noop,
+[data-theme="dark"] .ui.label.skipped {
+  color: #fff;
+}
+
+/* Basic labels keep dark text on light background */
+[data-theme="dark"] .ui.label.basic,
+[data-theme="dark"] .ui.basic.label {
+  color: #333 !important;
+  background-color: #e0e0e0;
+  border-color: #ccc;
+}
+
+/* Generic labels (no status color) - like time stamps and zero counts */
+[data-theme="dark"] .ui.label.status:not(.failed):not(.changed):not(.unchanged):not(.unreported):not(.noop):not(.skipped),
+[data-theme="dark"] .ui.label.count:not(.failed):not(.changed):not(.unchanged):not(.unreported):not(.noop):not(.skipped) {
+  color: #333 !important;
+  background-color: #e0e0e0;
+}
+
+[data-theme="dark"] .ui.header {
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .ui.list .item {
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .ui.breadcrumb a {
+  color: var(--color-link);
+}
+
+[data-theme="dark"] .ui.breadcrumb .divider {
+  color: var(--color-text-muted);
+}
+
+[data-theme="dark"] .dataTables_wrapper .dataTables_filter input,
+[data-theme="dark"] .dataTables_wrapper .dataTables_length select {
+  background-color: var(--color-input-bg);
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .dataTables_wrapper .dataTables_info,
+[data-theme="dark"] .dataTables_wrapper .dataTables_paginate {
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .dataTables_wrapper .dataTables_paginate .paginate_button {
+  color: var(--color-text) !important;
+}
+
+[data-theme="dark"] .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  background: var(--color-bg-secondary) !important;
+  color: var(--color-text) !important;
+}
+
+[data-theme="dark"] .dataTables_wrapper .dataTables_paginate .paginate_button.current {
+  background: var(--color-darkblue) !important;
+  color: #fff !important;
+}
+
+/* ===== Base Styles ===== */
 body {
   margin: 0;
   font-family: "Open Sans", sans-serif;
@@ -5,7 +416,7 @@ body {
 }
 
 a {
-  color: #2E5D8C;
+  color: var(--color-link);
   text-decoration: none;
 }
 
@@ -56,56 +467,63 @@ h1.ui.header.no-margin-bottom {
   text-shadow: 0 0 1px;
 }
 
+/* Status Colors - Failed */
 .ui.header.failed, .ui.line.failed {
-  color: #AA4643;
+  color: var(--color-failed);
 }
 
 .ui.label.failed, .ui.label.failure, .ui.label.events.failure {
-  background-color: #AA4643;
+  background-color: var(--color-failed);
 }
 
+/* Status Colors - Changed */
 .ui.header.changed, .ui.line.changed {
-  color: #4572A7;
+  color: var(--color-changed);
 }
 
 .ui.label.changed, .ui.label.success, .ui.label.events.success {
-  background-color: #4572A7;
+  background-color: var(--color-changed);
 }
 
+/* Status Colors - Unreported */
 .ui.header.unreported {
-  color: #3D96AE;
+  color: var(--color-unreported);
 }
 
 .ui.label.unreported {
-  background-color: #3D96AE;
+  background-color: var(--color-unreported);
 }
 
+/* Status Colors - Noop */
 .ui.header.noop {
-  color: #DB843D;
+  color: var(--color-noop);
 }
 
 .ui.label.noop, .ui.label.events.noop {
-  background-color: #DB843D;
+  background-color: var(--color-noop);
 }
 
+/* Status Colors - Total */
 .ui.label.resources.total, .ui.label.nodes.total {
-  background-color: #989898;
+  background-color: var(--color-total);
 }
 
+/* Status Colors - Unchanged */
 .ui.header.unchanged {
-  color: #89A54E;
+  color: var(--color-unchanged);
 }
 
 .ui.label.unchanged {
-  background-color: #89A54E;
+  background-color: var(--color-unchanged);
 }
 
+/* Status Colors - Skipped */
 .ui.line.skipped {
-  color: orange;
+  color: var(--color-skipped);
 }
 
 .ui.label.skipped, .ui.label.resources.skipped {
-  background-color: orange;
+  background-color: var(--color-skipped);
 }
 
 .count {
@@ -118,49 +536,62 @@ h1.ui.header.no-margin-bottom {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background: #E8E8E8;
+  background: var(--color-footer-bg);
 }
 
 .absolute div {
   padding: 1em;
 }
 
+/* Darkblue Theme */
 .ui.menu.darkblue {
-  background-color: #2C3E50;
+  background-color: var(--color-darkblue);
   border-radius: 0px !important;
 }
 
 .ui.darkblue.header, i.darkblue {
-  color: #2C3E50;
+  color: var(--color-darkblue);
+}
+
+/* Overview page statistics - make population/resources numbers more readable */
+.ui.header.darkblue.no-margin-bottom {
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+[data-theme="dark"] .ui.header.darkblue.no-margin-bottom {
+  color: var(--color-text);
 }
 
 .ui.labels .darkblue.label::before, .ui.darkblue.labels .label::before, .ui.darkblue.label::before {
-  background-color: #2C3E50;
+  background-color: var(--color-darkblue);
 }
 
 .ui.darkblue.labels .label, .ui.darkblue.label {
-  background-color: #2C3E50;
-  border-color: #2C3E50;
+  background-color: var(--color-darkblue);
+  border-color: var(--color-darkblue);
   color: #FFF;
 }
 
+/* Yellow Theme */
 .ui.menu.yellow {
-  background-color: #F0E965;
+  background-color: var(--color-yellow);
 }
 
 .ui.yellow.header, i.yellow {
-  color: #F0E965;
+  color: var(--color-yellow);
 }
 
 .ui.labels .yellow.label::before, .ui.yellow.labels .label::before, .ui.yellow.label::before {
-  background-color: #F0E965;
+  background-color: var(--color-yellow);
 }
 
 .ui.yellow.labels .label, .ui.yellow.label {
-  background-color: #F0E965;
-  border-color: #F0E965;
+  background-color: var(--color-yellow);
+  border-color: var(--color-yellow);
 }
 
+/* Scroll Button */
 #scroll-btn-top {
   position: fixed;
   overflow: hidden;
@@ -173,9 +604,9 @@ h1.ui.header.no-margin-bottom {
   right: 30px;
   bottom: 85px;
   padding-top: 2px;
-  background-color: #777777;
+  background-color: var(--color-scroll-btn);
   text-align: center;
-  color: #EEE;
+  color: var(--color-scroll-btn-text);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -188,7 +619,7 @@ h1.ui.header.no-margin-bottom {
 }
 
 #scroll-btn-top:hover {
-  background-color: #888;
+  background-color: var(--color-scroll-btn-hover);
 }
 
 #scroll-btn-top.show {
@@ -210,6 +641,7 @@ h1.ui.header.no-margin-bottom {
   height: 160px;
 }
 
+/* JSON Syntax Highlighting */
 pre.json {
   padding: 0;
   margin: 0;
@@ -217,31 +649,31 @@ pre.json {
 }
 
 .string {
-  color: #2E5D8C;
+  color: var(--color-json-string);
 }
 a .string:hover {
-  color: #1e70bf;
+  color: var(--color-json-string-hover);
 }
 .number {
-  color: darkorange;
+  color: var(--color-json-number);
 }
 a .number:hover {
-  color: #ffab3d;
+  color: var(--color-json-number-hover);
 }
 .boolean {
-  color: blue;
+  color: var(--color-json-boolean);
 }
 a .boolean:hover {
-  color: #7171fc;
+  color: var(--color-json-boolean-hover);
 }
 .key {
-  color: rgb(97, 117, 54);
+  color: var(--color-json-key);
 }
 a .key:hover {
-  color: rgb(158, 185, 101);
+  color: var(--color-json-key-hover);
 }
 .null {
-  color: magenta;
+  color: var(--color-json-null);
 }
 
 textarea, /* query */
@@ -278,4 +710,24 @@ td.code {
 
 #facts_table td {
   vertical-align: top;
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+  background: transparent;
+  border: none;
+  padding: 0.5em;
+  cursor: pointer;
+  color: #fff;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+#theme-toggle:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+#theme-toggle i {
+  margin: 0;
 }
