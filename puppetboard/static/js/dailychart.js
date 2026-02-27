@@ -13,6 +13,16 @@ jQuery(function ($) {
     })
   }
 
+  // Get chart colors from CSS variables (supports dark mode)
+  function getChartColors() {
+    var style = getComputedStyle(document.documentElement);
+    return {
+      failed: style.getPropertyValue('--color-failed').trim() || "#AA4643",
+      changed: style.getPropertyValue('--color-changed').trim() || "#4572A7",
+      unchanged: style.getPropertyValue('--color-unchanged').trim() || "#89A54E",
+    };
+  }
+
   let chart = bb.generate({
     bindto: "#dailyReportsChart",
     data: {
@@ -23,12 +33,7 @@ jQuery(function ($) {
         value: ["failed", "changed", "unchanged"],
       },
       groups: [["failed", "changed", "unchanged"]],
-      colors: {
-        // Must match CSS colors
-        failed: "#AA4643",
-        changed: "#4572A7",
-        unchanged: "#89A54E",
-      },
+      colors: getChartColors(),
     },
     size: {
       height: 160,
